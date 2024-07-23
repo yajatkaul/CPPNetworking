@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mccra\\source\\repos\\ClientSide\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D9A1904-52BC-4F89-8C17-19A41DC4D329}|ClientSide.vcxproj|C:\\Users\\mccra\\source\\repos\\ClientSide\\Client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D9A1904-52BC-4F89-8C17-19A41DC4D329}|ClientSide.vcxproj|solutionrelative:Client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Client.cpp",
+              "DocumentMoniker": "C:\\Users\\mccra\\source\\repos\\ClientSide\\Client.cpp",
+              "RelativeDocumentMoniker": "Client.cpp",
+              "ToolTip": "C:\\Users\\mccra\\source\\repos\\ClientSide\\Client.cpp",
+              "RelativeToolTip": "Client.cpp",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAwwBMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-23T11:01:01.831Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

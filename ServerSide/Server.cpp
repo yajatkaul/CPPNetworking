@@ -5,6 +5,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+	//Create server
 	SOCKET serverSocket, acceptSocket;
 	int port = 55555;
 	WSADATA wsaData;
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
 		cout << "The status: " << wsaData.szSystemStatus << endl;
 	}
 
+	//Create socket
 	serverSocket = INVALID_SOCKET;
 	serverSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (serverSocket == INVALID_SOCKET) {
@@ -31,6 +33,7 @@ int main(int argc, char* argv[]) {
 		cout << "socket() is ok!" << endl;
 	}
 
+	//Bind to socket
 	sockaddr_in service;
 	service.sin_family = AF_INET;
 	InetPtonA(AF_INET, "127.0.0.1", &service.sin_addr.s_addr);
@@ -52,6 +55,7 @@ int main(int argc, char* argv[]) {
 		cout << "listen() is ok, waiting for connections.." << endl;
 	}
 
+	//Accept connections
 	acceptSocket = accept(serverSocket, NULL, NULL);
 	if (acceptSocket == INVALID_SOCKET) {
 		cout << "accept() failed: " << WSAGetLastError() << endl;
@@ -61,6 +65,8 @@ int main(int argc, char* argv[]) {
 
 	cout << "Accepted connection" << endl;
 
+
+	//Recieve data
 	char buffer[200];
 	int byteCount = recv(acceptSocket, buffer, 200, 0);
 	if (byteCount > 0) {
@@ -70,6 +76,7 @@ int main(int argc, char* argv[]) {
 		WSACleanup();
 	}
 
+	//Send data
 	char confirmation[200] = "Message Received";
 	byteCount = send(acceptSocket, confirmation, 200, 0);
 	if (byteCount > 0) {

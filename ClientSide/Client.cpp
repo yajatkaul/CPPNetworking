@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+	//Create client
 	SOCKET clientSocket;
 	int port = 55555;
 	WSADATA wsaData;
@@ -20,6 +21,7 @@ int main() {
 		cout << "The status: " << wsaData.szSystemStatus << endl;
 	}
 
+	//Create socket
 	clientSocket = INVALID_SOCKET;
 	clientSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (clientSocket == INVALID_SOCKET) {
@@ -31,6 +33,7 @@ int main() {
 		cout << "socket() is ok!" << endl;
 	}
 
+	//Connect to server
 	sockaddr_in clientService;
 	clientService.sin_family = AF_INET;
 	InetPtonA(AF_INET, "127.0.0.1", &clientService.sin_addr.s_addr);
@@ -45,6 +48,7 @@ int main() {
 		cout << "Client: Can start sending and receiving data..." << endl;
 	}
 
+	//Send data
 	char buffer[200];
 	cout << "Please enter a message: ";
 	cin.getline(buffer, 200);
@@ -56,6 +60,7 @@ int main() {
 		WSACleanup();
 	}
 
+	//Recieve data
 	byteCount = recv(clientSocket, buffer, 200, 0);
 	if (byteCount > 0) {
 		cout << "Message received: " << buffer << endl;
